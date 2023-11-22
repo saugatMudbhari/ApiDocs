@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.side_nav {
+  background: rgb(5, 68, 104);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+  border-right: 1px solid;
+  text-align: center;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_nav li {
+  list-style: none;
+}
+
+.nav_list {
+  width: 40%;
+}
+
+.the_content {
+  margin-left: 250px;
+  width: 100%;
+}
