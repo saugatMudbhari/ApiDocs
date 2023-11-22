@@ -1,12 +1,13 @@
 export let contents=[
     {
         Title:'Login',
-        method:'create',
+        Method:'create',
         API:'/userauth/login/',
         Description:'Takes a set of user credentials returns an access web tokens to authenticate of those credentials ',
         RequestType:'POST',
         Payloads:'',
         parameters:''
+
     },
     {
         Title: 'Verify',
