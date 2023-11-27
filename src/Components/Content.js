@@ -5,8 +5,10 @@ export let contents=[
         API:'/userauth/login/',
         Description:'Takes a set of user credentials returns an access web tokens to authenticate of those credentials ',
         RequestType:'POST',
-        Payloads:'',
-        parameters:''
+        Payload:'',
+        parameters:'',
+        
+       
 
     },
     {

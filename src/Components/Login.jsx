@@ -1,46 +1,51 @@
 import React from 'react'
-import { Card, Container, Header } from 'semantic-ui-react'
+import { Card, Container, Grid, Segment, Header } from 'semantic-ui-react'
 import { contents } from './Content'
 const Login = () => {
+
     const mapComponents = () => {
         return contents.map((content, index) => (
-            <Card key={index} style={{ width: '100%', padding: '0 2rem 2rem 2rem' }}>
-                <Header className='headerSection' style={{ marginTop: '1.3em' }} as='h2'>
-                    {content.Title}
 
-                </Header>
+            <div style={{ display: 'flex', width: '100%', border: '1px solid red', marginBottom: '2rem', }}>
+                <div style={{ width: '20%', }}>
+                    {Object.keys(content).map((keyName) => (
+                        <h5 className='apiKey' style={{ padding: '15px  10px', margin: '0' }}> {keyName}</h5>
 
-                {Object.keys(content).map((keyName) => (
-                    keyName == 'API' ?
-                        (<Card.Header as='h4' key={keyName}>
-                            {keyName}: <span style={{ color: 'red', background: '#fbffb8', padding: '5px' }}>
-                                {content[keyName]}
-                            </span>
-                        </Card.Header>
-                        ) : (
-                            <Card.Header as='h4' key={keyName}>
-                                {keyName}:{content[keyName]}
-                            </Card.Header>
-                        )
-                ))}
-            </Card>
+                    ))}
+                </div>
+                <div style={{ width: '80%' }}>
+                    {/* {Object.keys(content).map((keyName) => (
+
+                        keyName == 'API' ? (<h5 className='apiKey' style={{ color: 'red', background: '#fbffb8', padding: '15px 10px 15px 10px', margin: '0' }}>
+                            {content[keyName]}</h5>) :
+                            (<h5 className='apiKey' style={{ padding: '15px 10px 15px 10px', margin: '0' }} >{content[keyName]}</h5>)
+                    ))} */}
+                    {/* prac */}
+                    {Object.keys(content).map((keyName) => {
+                        if (keyName == 'API') {
+                            return (<h5 className='apiKey' style={{ color: 'red', background: '#fbffb8', padding: '15px  10px', margin: '0' }}>
+                                {content[keyName]}</h5>)
+                        }
+                        else if (keyName == 'Payload' && content[keyName].length <= 0) {
+                            return (<h5 className='apiKey' style={{ padding: '24px  10px', margin: '0' }}>
+                                {content[keyName]}</h5>)
+                        }
+                        else {
+                            return (<h5 className='apiKey' style={{ background: '', padding: '15px  10px', margin: '0' }}>
+                                {content[keyName]}</h5>)
+                        }
+                    })}
+                </div>
+            </div >
+
         ));
+
+
     }
+
     return (
         <>
             <Container>
-                {/* {contents.map((content, index) => (
-                    <Card key={index} style={{ width: '100%', padding: '0 2rem 2rem 2rem' }}>
-                        <Header className='headerSection' style={{ marginTop: '1.3em' }} as='h2'>{content.Title}</Header>
-                        {
-                            Object.keys(content).map((keyName) => (
-                                < Card.Header as='h5' key={keyName} >
-                                    {keyName}:{content[keyName]}
-                                </Card.Header>
-                            ))
-                        }
-                    </Card>
-                ))} */}
                 {mapComponents()}
             </Container >
         </>
