@@ -49,3 +49,30 @@
 .apiKey:not(:last-child) {
   border-bottom: 1px solid #91b4f9;
 }
+
+.language_list {
+  cursor: pointer;
+
+}
+
+.language_list {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.language_list::before {
+  background: hsl(45 100% 70%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.language_list:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
