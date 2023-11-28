@@ -4,8 +4,10 @@ import { contents } from './Content'
 
 const Login = () => {
     const [isClick, setIsClick] = useState(false);
-    const handleClick = (event) => {
+    const [clickedLanguage, setClickedLanguage] = useState(null);
+    const handleClick = (language) => {
         setIsClick(current => !current);
+        setClickedLanguage(language);
     };
     { console.log(isClick) }
     const mapComponents = () => {
@@ -28,7 +30,7 @@ const Login = () => {
                                     <Grid columns={5} >
                                         <Grid.Row style={{ marginTop: 4, padding: 0 }} >
                                             {content[keyName].map((language, index) => (
-                                                <Grid.Column onClick={handleClick}>
+                                                <Grid.Column onClick={() => handleClick(language)}>
                                                     <h5 style={{ padding: 10 }} className='language_list'> {language.language}</h5>
                                                 </Grid.Column>
                                             ))}
@@ -37,10 +39,12 @@ const Login = () => {
                                     <Grid columns={1} >
                                         <Grid.Row style={{ margin: 0, padding: 10 }} >
                                             {content[keyName].map((language, index) => (
-                                                <Grid.Column   >
-                                                    {isClick && (<code style={{}}>
-                                                        {language.code}
-                                                    </code>)}
+                                                <Grid.Column key={index}   >
+                                                    {clickedLanguage && clickedLanguage.language === language.language && (
+                                                        <code style={{}}>
+                                                            {language.code}
+                                                        </code>
+                                                    )}
                                                 </Grid.Column>
                                             ))}
                                         </Grid.Row>
