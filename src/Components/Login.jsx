@@ -3,7 +3,7 @@ import { Container, Grid, Icon } from "semantic-ui-react";
 import { contents } from "./Content";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { a11yDark, docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { a11yDark, nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 
 const Login = () => {
@@ -62,13 +62,13 @@ const Login = () => {
                                             ))}
                                         </Grid.Row>
                                     </Grid>
-                                    <Grid columns={1}>
+                                    <Grid style={{ margin: 0 }} columns={1}>
                                         <Grid.Row style={{ margin: 0, padding: 10 }}>
                                             {content[keyName].map((language, index) => (
                                                 <Grid.Column key={index}>
                                                     {clickedLanguage &&
                                                         clickedLanguage.language === language.language && (
-                                                            <div className="">
+                                                            <div style={{ position: 'relative' }} className="">
                                                                 <CopyToClipboard
                                                                     text={language.code}
                                                                     onCopy={() => setCopySuccess(true)}
@@ -77,8 +77,7 @@ const Login = () => {
                                                                         {copySuccess ? "Copied" : "Copy"}
                                                                     </button>
                                                                 </CopyToClipboard>
-                                                                {/* <code style={{}}>{language.code}</code> */}
-                                                                <SyntaxHighlighter language={language.language} style={a11yDark}>
+                                                                <SyntaxHighlighter language={language.language} style={nightOwl}>
                                                                     {language.code}
                                                                 </SyntaxHighlighter>
                                                             </div>
