@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { Container, Grid, Icon } from "semantic-ui-react";
 import { contents } from "./Content";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yDark, docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+
 
 const Login = () => {
     const [clickedLanguage, setClickedLanguage] = useState(null);
     const [copySuccess, setCopySuccess] = useState(false);
     const handleClick = (language) => {
         setClickedLanguage(language);
-
+        setCopySuccess(false);
     };
 
     const mapComponents = () => {
@@ -50,6 +53,7 @@ const Login = () => {
                                         <Grid.Row style={{ marginTop: 4, padding: 0 }}>
                                             {content[keyName].map((language, index) => (
                                                 <Grid.Column onClick={() => handleClick(language)}>
+
                                                     <h5 style={{ padding: 10 }} className="language_list">
                                                         {" "}
                                                         {language.language}
@@ -69,26 +73,20 @@ const Login = () => {
                                                                     text={language.code}
                                                                     onCopy={() => setCopySuccess(true)}
                                                                 >
-                                                                    <button>
-                                                                        <Icon name="copy" />
-                                                                        {copySuccess && (
-                                                                            <span style={{ color: 'yellow' }}>
-                                                                                <br /><br />copied
-                                                                            </span>
-                                                                        )}
+                                                                    <button class="button-62" role="button">
+                                                                        {copySuccess ? "Copied" : "Copy"}
                                                                     </button>
                                                                 </CopyToClipboard>
-                                                                <code style={{}}>
+                                                                {/* <code style={{}}>{language.code}</code> */}
+                                                                <SyntaxHighlighter language={language.language} style={a11yDark}>
                                                                     {language.code}
-
-                                                                </code>
+                                                                </SyntaxHighlighter>
                                                             </div>
                                                         )}
                                                 </Grid.Column>
                                             ))}
                                         </Grid.Row>
                                     </Grid>
-
                                 </div>
                             );
                         } else {
