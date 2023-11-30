@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar'
 import HeadSection from './Components/HeadSection'
 import Login from './Components/Login'
 import { Grid, GridColumn, Container } from 'semantic-ui-react'
+import AnotherLogin from './Components/AnotherLogin'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +17,8 @@ function App() {
         <div className="the_content">
           <HeadSection />
           <Container >
-            <Login />
+            {/* <Login /> */}
+            <AnotherLogin />
           </Container>
         </div>
       </div>

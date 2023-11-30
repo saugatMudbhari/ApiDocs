@@ -37,7 +37,7 @@ const Login = () => {
                 </div>
                 <div style={{ width: "85%" }}>
                     {Object.keys(content).map((keyName) => {
-                        if (keyName == "API") {
+                        if (keyName == "api") {
                             return (
                                 <h5
                                     className="apiKey"
