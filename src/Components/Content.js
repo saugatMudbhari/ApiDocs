@@ -83,7 +83,7 @@ export let contents = [
     requestType: 'GET',
     api: '/coursematerial/course/',
     payload: '',
-    params: 'limit\noffset',
+    params: 'limit,\n offset',
   },
   {
     title: 'Notification',
@@ -92,7 +92,7 @@ export let contents = [
     requestType: 'GET',
     api: '/notification/notification/',
     payload: '',
-    params: 'limit\noffset',
+    params: 'limit,\noffset',
   },
 ]
 

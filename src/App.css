@@ -70,7 +70,7 @@ h5 {
 }
 
 .language_list::before {
-  background: hsl(45 100% 70%);
+  background: rgb(62, 119, 187);
   content: "";
   inset: 0;
   position: absolute;
@@ -82,14 +82,22 @@ h5 {
 
 .language_list:hover::before {
   transform: scaleX(1);
+
   transform-origin: left;
 }
+
+.language_list:hover {
+  color: white;
+  transition: 0.3s ease-in-out;
+
+}
+
 
 
 /* button */
 
 .button-62 {
-  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  background: linear-gradient(to bottom right, #5147ef, #5186c5);
   border: 0;
   border-radius: 12px;
   color: #FFFFFF;
@@ -107,11 +115,11 @@ h5 {
 }
 
 .button-62:not([disabled]):focus {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #6157ea, .125rem .125rem 1rem #5a8ac6;
 }
 
 .button-62:not([disabled]):hover {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #6157ea, .125rem .125rem 1rem #5a8ac6;
 }
 
 
